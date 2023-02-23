@@ -1,0 +1,8 @@
+@font-face {
+    font-family: PoppinsMedium;
+    src: url(assets/fonts/Poppins-Medium.ttf);
+}
+
+h1 {
+    font-family: PoppinsMedium;
+}
