@@ -3,6 +3,22 @@
     src: url(assets/fonts/Poppins-Medium.ttf);
 }
 
-h1 {
+@font-face {
+    font-family: PoppinsThin;
+    src: url(assets/fonts/Poppins-Thin.ttf);
+}
+
+@font-face {
+    font-family: PoppinsBold;
+    src: url(assets/fonts/Poppins-Bold.ttf);
+}
+
+#thin {
+    font-family: PoppinsThin;
+}
+#bold {
+    font-family: PoppinsBold;
+}
+#medium {
     font-family: PoppinsMedium;
 }
