@@ -4,7 +4,7 @@ This repository contains main applications of SunsetDevice, a raspberry pi devic
 
 ## Installation
 
-You need to download [nodejs](nodejs.org/en/), [npm](https://npmjs.com/) (already installed with node.js, normally), download the repo,
+You need to download [nodejs](https://nodejs.org/en/), [npm](https://npmjs.com/) (already installed with node.js, normally), download the repo,
 go to `/webserver/` and run 
 ```bash
 npm install
