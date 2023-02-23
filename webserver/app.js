@@ -9,9 +9,10 @@ function getlog(name,user,hostname) {
 
 app.get('/', function(req, res) {
     getlog("/",req.ip,req.hostname)
-    res.send('Hello world');
+    res.send('Hello world!');
 });
 
 app.listen(port, () => {
     console.log("["+chalk.blueBright("Launching")+"] - App listening on port "+chalk.magenta(port))
 })
+
