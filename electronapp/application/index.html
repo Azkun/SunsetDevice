@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="http://127.0.0.1:3000/socket.io/socket.io.js"></script>
+    <title>Sunset Device</title>
 </head>
+
 <body>
     <h1>hi!!</h1>
+    <div id="messages"></div>
+    <script defer>
+        var messages = document.getElementById('messages');
+        var socket = io("http://127.0.0.1:3000/");
+        socket.on('request', function (msg) {
+            var item = document.createElement('li');
+            item.textContent = msg;
+            messages.appendChild(item);
+            window.scrollTo(0, document.body.scrollHeight);
+        });
+    </script>
 </body>
 </html>

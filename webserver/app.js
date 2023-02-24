@@ -1,19 +1,24 @@
 import express from 'express'
 import chalk from 'chalk'
 import path from 'path'
+
+import http from 'http'
+
 import { fileURLToPath } from 'url';
 import { Server } from 'socket.io'
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 
 const app = express();
 const port = 3000;
 
-function getlog(name, user, hostname, additional = "content_query="+undefined) {
+const server = http.createServer(app)
+const io = new Server(server);
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+function getlog(name, user, hostname, additional = "content_query=" + undefined) {
     var add = " - "
-    if (additional == "content_query="+undefined) {
+    if (additional == "content_query=" + undefined) {
         add = ""
         additional = ""
     }
@@ -27,14 +32,16 @@ app.get('/', function (req, res) {
 });
 
 app.get('/request', function (req, res) {
-    getlog("/request", req.ip, req.hostname, "content_query="+req.query.content)
+    getlog("/request", req.ip, req.hostname, "content_query=" + req.query.content)
     res.status(200)
     res.type("application/json")
-    res.send({content:req.query.content,status:200})
+    res.send({ content: req.query.content, status: 200 })
+    io.emit('request',req.query.content)
 })
 
+
 app.use(express.static(path.join(__dirname, '/front-end/')));
-app.listen(port, () => {
+server.listen(port, () => {
     console.log("[" + chalk.blueBright("Launching") + "] - App listening on port " + chalk.magenta(port))
 })
 

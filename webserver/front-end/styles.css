@@ -13,12 +13,12 @@
     src: url(assets/fonts/Poppins-Bold.ttf);
 }
 
-#thin {
+.thin {
     font-family: PoppinsThin;
 }
-#bold {
+.bold {
     font-family: PoppinsBold;
 }
-#medium {
+.medium {
     font-family: PoppinsMedium;
 }
