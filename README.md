@@ -10,3 +10,7 @@ go to `/webserver/` and run
 npm install
 ```
 After that, to run the **/webserver/**, you run the command `npm start`
+
+## Disclaimer
+
+If you're a GitHub wanderer and you found this, do not try to use this as you do not have any good instructions and a point to do that. This was created for a little project and it may seems really bad if you try to see what it does as of right now. It may never be released!
